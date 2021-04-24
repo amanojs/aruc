@@ -1,4 +1,14 @@
 class MembershipsController < ApplicationController
+  def index
+    membership = Membership.finf_by(user_id: 2)
+    if membership.save
+      render json: { status: 'SUCCESS', data: membership }
+    else
+      render json: { status: 'ERROR', data: membership.errors.full_messages }
+      p user.errors.full_messages
+    end
+  end
+
   def create
     membership = Membership.new(membership_create_params)
     if membership.save
@@ -10,7 +20,7 @@ class MembershipsController < ApplicationController
   end
 
   def update
-    membership = Membership.find(user_id:1).update(membership_create_params)
+    membership = Membership.find(user_id: 1).update(membership_create_params)
     if membership.save
       render json: { status: 'SUCCESS', data: membership }
     else
