@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_424_052_328) do
+ActiveRecord::Schema.define(version: 20_210_424_054_205) do
+  create_table 'memberships', force: :cascade do |t|
+    t.integer 'to_user_id'
+    t.integer 'from_user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['from_user_id'], name: 'index_memberships_on_from_user_id'
+    t.index %w[to_user_id from_user_id], name: 'index_memberships_on_to_user_id_and_from_user_id', unique: true
+    t.index ['to_user_id'], name: 'index_memberships_on_to_user_id'
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'user_name'
     t.string 'school_name'
