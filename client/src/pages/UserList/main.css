@@ -1,0 +1,58 @@
+.pageHeader{
+    text-align: center;
+}
+.pageHeader > div{
+    padding: 20px 0;
+}
+
+
+.cardList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    width: 150px;
+    padding: 20px 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    margin-bottom: 10px;
+}
+.card > div{
+    text-align: center;
+}
+.card .username, .place{
+    padding: 5px;
+    color: #5f5f5f;
+}
+.place{
+    font-size: 12px;
+}
+.usericon img{
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #0984e3;
+} 
+.actions button{
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    border-radius: 4px;
+    border: 1.5px solid #999;
+    margin-bottom: 2px;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    height: 100vh;
+    background-color: #0984e3;
+    transition: 0.5s;
+    opacity: 1;
+}
