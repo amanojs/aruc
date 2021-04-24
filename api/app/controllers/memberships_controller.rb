@@ -1,6 +1,7 @@
 class MembershipsController < ApplicationController
   def index
     membership = Membership.finf_by(user_id: 2)
+	membership = membership.includes(:user)
     if membership.save
       render json: { status: 'SUCCESS', data: membership }
     else
