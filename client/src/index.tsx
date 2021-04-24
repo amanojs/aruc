@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HeaderImg from './headerImg.png'
 
 ReactDOM.render(
   <React.StrictMode>
+    <header>
+      <img src={HeaderImg} width="100%" alt="header"/>
+    </header>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
